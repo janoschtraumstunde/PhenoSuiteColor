@@ -16,13 +16,11 @@
 #
 # Unit tests for:
 #                 SI.PhenoSuite.Color.R
-#                 SI.PhenoSuite.Color.Tests
+#                 SI.PhenoSuite.Color.Tests.R
 # 
 # Date: 5th August 2016
 # Author: jw
 # Version: 0.01
-
-
 
 test.examples <- function()
 {
@@ -61,5 +59,5 @@ test.examples <- function()
 
 test.deactivation <- function()
 {
-  DEACTIVATED('Deactivating this test function')
+  DEACTIVATED('Deactivating this test function.')
 }
