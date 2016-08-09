@@ -36,9 +36,8 @@ UniformNormData <- function(p, max, min) {
     stop('Minimum can not be larger then maximum.')
   }
 
-  x <- (p-min) / (max - min)
-  min(x)
-  max(x)
+  x <- (p - min) / (max - min)
+
   return(x)
 }
 
@@ -66,12 +65,10 @@ MedianCenterNormData <- function(p) {
   # set new min if upper range is greater
   if ((median - r.max) < min) {
     min <- median - r.max
-    
   }
   # set new max if lower range is greater
   if ((median + r.min) > max) {
     max <- median + r.min
-    
   }
   max
   # normalise between 0 and 1
@@ -96,7 +93,8 @@ UniformColourBinData <- function(p, max, min, n, col) {
   #  The corresponding #RGB color from a color array
   #  with n bins.
   x   <- (p - min) / (max - min)
-  bin <- floor(x / (1 / (n - 1)))
+
+    bin <- floor(x / (1 / (n - 1)))
   
   # R index adjustment 1..x
   return(col[bin + 1])
@@ -117,22 +115,20 @@ MedianCenterColourBinData <- function(p, median, max, min, n, col) {
   # Returns:
   #  The corresponding #RGB color from a color array
   #  with n bins.
-  r.max <- abs(max - median); r.max;
-  r.min <- abs(median - min); r.min;
+  r.max <- abs(max - median)
+  r.min <- abs(median - min)
   
   if ((median - r.max ) < min) {
-    min <- median - r.max;
+    min <- median - r.max
   }
-  min
-  
+
   if ((median + r.min ) > max) {
     max <- median + r.min;
   }   
-  max 
+
+  x <- (p - min)/(max - min)
   
-  x <- (p - min)/(max - min); x
-  
-  bin <- floor(x / (1 / (n-1))); bin
+  bin <- floor(x / (1 / (n-1)))
   
   return(col[bin + 1]) # + 1 array adjustment 1..x 
   
@@ -154,7 +150,7 @@ DrawImageMap <- function(p, n, r, c, col) {
   
   image(p,
         axes = F,
-        zlim = c(0,1),
+        zlim = c(0, 1),
         col  = colours)
   mtext(
     text = rownames(p),

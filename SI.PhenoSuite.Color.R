@@ -41,7 +41,7 @@ library('ggplot2')
 library('dichromat') 
 
 # in cm's
-pdf("PhenoSuite_Heatmap_Colours.pdf", width=12/2.54, height=10/2.54)
+pdf("plots/PhenoSuite_Heatmap_Colours.pdf", width=12/2.54, height=10/2.54)
 
 # show 3x3 plots each with 1,1,1,1 margins (left,top,right,bottom)
 par(mfrow    = c(3, 3),  # segment plot into 3 x 3 tiles (row/cols)
@@ -75,7 +75,7 @@ write.table(colours, file = "colours_PurpleRed.csv", row.names=FALSE, col.names=
 # BrBG
 colours <- colorRampPalette(brewer.pal(11, "BrBG"))(n)
 colours
-pie(rep(1, n),col = colours,radius = 1, labels = "", border = NA, main='Brown-Turquoise')
+pie(rep(1, n),col = colours, radius = 1, labels = "", border = NA, main='Brown-Turquoise')
 write.table(colours,file = "colours_BrownTurquoise.csv", row.names = FALSE, col.names = FALSE, quote = FALSE, sep  =",")
 
 # PiYG
