@@ -40,6 +40,8 @@ library('ggplot2')
 # modify colors to approve for colour blindness
 library('dichromat') 
 
+n <- 7  # number of color bins
+
 # in cm's
 pdf("plots/PhenoSuite_Heatmap_Colours.pdf", width=12/2.54, height=10/2.54)
 
